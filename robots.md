@@ -2,12 +2,12 @@
 classDiagram
     %% Интерфейсы команд
     class IMoveCommand {
-        <<Интерфейс>>
+        <<Интерфес>>
         +Destination: Point
     }
 
     class IShooterMoveCommand {
-        <<Интерфейс>>
+        <<Интерфей>>
         +ShouldHide: bool
     }
 
@@ -20,7 +20,7 @@ classDiagram
     }
 
     class IDevice~in TCommand~ {
-        <<Интерфейс>>
+        <<Интерфес>>
         +ExecuteCommand(TCommand) string
     }
 
@@ -60,13 +60,13 @@ classDiagram
     Robot~TCommand~ --> IRobotAI~TCommand~ : использует
     Robot~TCommand~ --> IDevice~TCommand~ : использует
 
-    %% Статическая фабрика
+    %% Стат фабрика
     class Robot {
         <<static>>
         +Create~TCommand~(IRobotAI~TCommand~, IDevice~TCommand~) Robot~TCommand~
     }
 
-    %% Вспомогательные генераторы 
+    %% Вспомог генераторы 
     class ShooterCommand {
         <<static>>
         +ForCounter(int) IShooterMoveCommand
@@ -80,7 +80,7 @@ classDiagram
     ShooterAI --> ShooterCommand : использует
     BuilderAI --> BuilderCommand : использует
 
-    %% зависимости 
+    %% завис
     Mover --> IMoveCommand : параметр
     ShooterMover --> IShooterMoveCommand : параметр
 ```
