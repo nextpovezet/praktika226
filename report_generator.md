@@ -20,7 +20,7 @@ classDiagram
 
     %% интерфейс для формат отчёт
     class IReportFormatter {
-        <<interface>>
+        <<интерф>>
         +MakeCaption(string) string
         +BeginList() string
         +MakeItem(string, string) string
