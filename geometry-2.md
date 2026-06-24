@@ -8,7 +8,7 @@ classDiagram
     }
 
     %% кон. фигуры
-    class Ball {
+    class Bal {
         +double Radius
         +Accept(visitor: IVisitor) Body
     }
@@ -34,36 +34,36 @@ classDiagram
     %% интерфейс посетителя
     class IVisitor {
         <<interface>>
-        +Visit(Ball) Body
-        +Visit(RectangularCuboid) Body
-        +Visit(Cylinder) Body
-        +Visit(CompoundBody) Body
+        +Visit(Bal) Bоdy
+        +Visit(RectangularCuboid) Bоdy
+        +Visit(Cylinder) Bоdy
+        +Visit(CompoundBody) Bоdy
     }
 
     %% Реализации посетителей
     class BoundingBoxVisitor {
-        +Visit(Ball) Body
-        +Visit(RectangularCuboid) Body
-        +Visit(Cylinder) Body
-        +Visit(CompoundBody) Body
+        +Visit(Bal) Bоdy
+        +Visit(RectangularCubоid) Bоdy
+        +Visit(Cylinder) Bоdy
+        +Visit(CompoundBody) Bоdy
     }
 
     class BoxifyVisitor {
-        +Visit(Ball) Body
-        +Visit(RectangularCuboid) Body
-        +Visit(Cylinder) Body
-        +Visit(CompoundBody) Body
+        +Visit(Bal) Bоdy
+        +Visit(RectangularCubоid) Bоdy
+        +Visit(Cylinder) Bоdy
+        +Visit(CompoundBody) Bоdy
     }
 
     %% Наследование
-    Body <|-- Ball
+    Body <|-- Bal
     Body <|-- RectangularCuboid
     Body <|-- Cylinder
     Body <|-- CompoundBody
 
     %% Реализация интерфейса
-    IVisitor <|.. BoundingBoxVisitor
-    IVisitor <|.. BoxifyVisitor
+    IVisitor <|.. BоundingBoxVisitor
+    IVisitor <|.. BоxifyVisitor
 
     %% Связи
     Body --> IVisitor : «принимает» посетителя
